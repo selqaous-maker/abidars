@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PagePath } from './types';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { SEOHead } from './components/SEOHead';
 import { LiveCallDemoModal } from './components/LiveCallDemoModal';
 import { AuditBookingModal } from './components/AuditBookingModal';
 import { HeroVideoModal } from './components/HeroVideoModal';
@@ -35,9 +36,8 @@ import { IntegrationsPage } from './pages/IntegrationsPage';
 import { SecurityCompliancePage } from './pages/SecurityCompliancePage';
 
 export default function App() {
-  // Helper to parse path from hash or pathname
+  // Helper to parse path from pathname or legacy hash
   const getInitialPath = (): PagePath => {
-    const hash = window.location.hash.replace('#', '');
     const validPaths: PagePath[] = [
       '/',
       '/ai-receptionist',
@@ -78,9 +78,19 @@ export default function App() {
       '/ai-receptionist-real-estate',
       '/voice-ai-agents'
     ];
-    if (validPaths.includes(hash as PagePath)) {
+
+    // Check legacy hash first for backward compatibility
+    const hash = window.location.hash.replace('#', '');
+    if (hash && validPaths.includes(hash as PagePath)) {
+      window.history.replaceState({}, '', hash);
       return hash as PagePath;
     }
+
+    const pathname = window.location.pathname as PagePath;
+    if (validPaths.includes(pathname)) {
+      return pathname;
+    }
+
     return '/';
   };
 
@@ -98,19 +108,23 @@ export default function App() {
     setAuditModalOpen(true);
   };
 
-  // Sync hash when path changes
+  // HTML5 History pushState navigation
   const handleNavigate = (path: PagePath) => {
     setCurrentPath(path);
-    window.location.hash = path;
+    window.history.pushState({}, '', path);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleLocationChange = () => {
       setCurrentPath(getInitialPath());
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
   }, []);
 
   const openDemoWithIndustry = (indId?: string) => {
@@ -120,6 +134,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#050507] text-slate-100 flex flex-col font-sans selection:bg-[#00d4ff] selection:text-black">
+      <SEOHead path={currentPath} />
       
       {/* Sticky Global Navbar */}
       <Navbar
