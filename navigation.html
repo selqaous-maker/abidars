@@ -1,0 +1,188 @@
+<!-- PEXEK HEADER NAVIGATION -->
+<header className="sticky top-0 z-50 w-full bg-[#050507]/95 backdrop-blur-md border-b border-white/10 transition-colors">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    
+    <!-- LOGO (left) -->
+    <a href="/" className="flex items-center gap-3 cursor-pointer group shrink-0">
+      <img 
+        src="https://i.ibb.co/pvHYhfRT/Chat-GPT-Image-Jul-8-2026-05-29-33-PM.png" 
+        alt="PEXEK" 
+        className="h-[36px] sm:h-[42px] w-auto transition-all duration-200 group-hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.4)]"
+      />
+      <div className="flex flex-col">
+        <div className="flex items-center gap-1.5">
+          <span className="text-xl font-extrabold tracking-tight text-white font-mono">PEXEK</span>
+          <span className="text-[10px] uppercase font-bold tracking-widest text-[#00d4ff] bg-[#00d4ff]/10 border border-[#00d4ff]/30 px-1.5 py-0.5 rounded-[2px]">
+            OS™
+          </span>
+        </div>
+        <span className="text-[9px] font-medium text-slate-400 tracking-wider font-mono hidden sm:inline-block">
+          AI VOICE OPERATING SYSTEM
+        </span>
+      </div>
+    </a>
+
+    <!-- PRIMARY NAV (center) -->
+    <nav className="hidden lg:flex items-center space-x-1">
+      
+      <!-- SOLUTIONS DROPDOWN -->
+      <div className="relative group">
+        <button className="px-3 py-2 text-xs uppercase tracking-wider font-mono font-bold text-slate-300 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px] flex items-center gap-1.5 transition-all">
+          <span>Solutions</span>
+          <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#00d4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div className="absolute top-full left-0 w-64 pt-2 hidden group-hover:block z-50">
+          <div className="bg-[#0a0e1a] border border-white/15 rounded-[2px] p-2 shadow-2xl space-y-1">
+            <a href="/ai-receptionist" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              AI Receptionist
+            </a>
+            <a href="/lead-qualification-ai" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Lead Qualification
+            </a>
+            <a href="/appointment-booking-ai" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Appointment Booking
+            </a>
+            <a href="/workflow-automation" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Workflow Automation
+            </a>
+            <a href="/conversation-intelligence" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Conversation Intelligence
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- INDUSTRIES DROPDOWN -->
+      <div className="relative group">
+        <button className="px-3 py-2 text-xs uppercase tracking-wider font-mono font-bold text-slate-300 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px] flex items-center gap-1.5 transition-all">
+          <span>Industries</span>
+          <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#00d4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div className="absolute top-full left-0 w-64 pt-2 hidden group-hover:block z-50">
+          <div className="bg-[#0a0e1a] border border-white/15 rounded-[2px] p-2 shadow-2xl space-y-1">
+            <a href="/dental-ai-receptionist" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Dental Practices
+            </a>
+            <a href="/healthcare-ai-receptionist" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Healthcare
+            </a>
+            <a href="/home-services-ai" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Home Services
+            </a>
+            <a href="/real-estate-ai" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Real Estate
+            </a>
+            <a href="/legal-ai-intake" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Legal Intake
+            </a>
+            <a href="/ecommerce-ai-support" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              E-commerce
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPLOYMENT DROPDOWN -->
+      <div className="relative group">
+        <button className="px-3 py-2 text-xs uppercase tracking-wider font-mono font-bold text-slate-300 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px] flex items-center gap-1.5 transition-all">
+          <span>Deployment</span>
+          <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#00d4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div className="absolute top-full left-0 w-64 pt-2 hidden group-hover:block z-50">
+          <div className="bg-[#0a0e1a] border border-white/15 rounded-[2px] p-2 shadow-2xl space-y-1">
+            <a href="/how-it-works" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              How It Works
+            </a>
+            <a href="/deployment-blueprints" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              AI Deployment Blueprint
+            </a>
+            <a href="/integrations" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Integrations
+            </a>
+            <a href="/security" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Security & Compliance
+            </a>
+            <a href="/pricing" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Pricing Models
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING LINK -->
+      <a href="/pricing" className="px-3 py-2 text-xs uppercase tracking-wider font-mono font-bold text-slate-300 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px] transition-all">
+        Pricing
+      </a>
+
+      <!-- RESOURCES DROPDOWN -->
+      <div className="relative group">
+        <button className="px-3 py-2 text-xs uppercase tracking-wider font-mono font-bold text-slate-300 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px] flex items-center gap-1.5 transition-all">
+          <span>Resources</span>
+          <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#00d4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div className="absolute top-full left-0 w-64 pt-2 hidden group-hover:block z-50">
+          <div className="bg-[#0a0e1a] border border-white/15 rounded-[2px] p-2 shadow-2xl space-y-1">
+            <a href="/blog" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              AI Voice Insights
+            </a>
+            <a href="/deployment-blueprints" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Deployment Blueprints
+            </a>
+            <a href="/roi-calculator" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              ROI Calculator
+            </a>
+            <a href="/demo" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ABOUT DROPDOWN -->
+      <div className="relative group">
+        <button className="px-3 py-2 text-xs uppercase tracking-wider font-mono font-bold text-slate-300 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px] flex items-center gap-1.5 transition-all">
+          <span>About</span>
+          <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-hover:text-[#00d4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div className="absolute top-full left-0 w-64 pt-2 hidden group-hover:block z-50">
+          <div className="bg-[#0a0e1a] border border-white/15 rounded-[2px] p-2 shadow-2xl space-y-1">
+            <a href="/about" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              About PEXEK
+            </a>
+            <a href="/about#founder" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Founder
+            </a>
+            <a href="/contact" className="block px-3 py-2 text-xs font-mono font-medium text-slate-200 hover:text-[#00d4ff] hover:bg-white/5 rounded-[2px]">
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- CTA BUTTON (right) -->
+    <div className="hidden lg:flex items-center space-x-4">
+      <a href="https://app.pexek.com" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-slate-400 hover:text-[#00d4ff] transition-colors">
+        Login
+      </a>
+      <a 
+        href="/book-audit" 
+        className="bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs px-5 py-2.5 rounded-[2px] uppercase tracking-wider transition-all shadow-md"
+      >
+        Book Strategy Audit →
+      </a>
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,31 @@
+===================================================================
+PEXEK LANDING PAGE OUTLINE: DENTAL AI RECEPTIONIST
+URL: https://pexek.com/dental-ai-receptionist
+===================================================================
+
+TARGET KEYWORD: "AI receptionist dental"
+AUTHOR: Salah Eddine El Qaous
+
+H1 HEADLINE:
+Dental AI Receptionist — Keep Your Chairs Fully Booked 24/7
+
+META DESCRIPTION:
+Automate dental practice phone operations with PEXEK's AI receptionist. Handles emergency intake, books new patient consultations, sends hygiene reminders, and syncs PMS data.
+
+KEY SECTION 01: 24/7 New Patient Intake & Emergency Scheduling
+- Answers after-hours dental emergency calls immediately, calming patients and booking urgent triage slots.
+- Qualifies new patients by collecting insurance provider, chief complaint, and preferred appointment window.
+- Eliminates busy-tone phone bottlenecks during morning peak check-in hours.
+
+KEY SECTION 02: Dental Practice Management Integration & Recall Automation
+- Connects directly with Dentrix, Open Dental, Eaglesoft, and modern cloud PMS systems.
+- Automatically places hygiene recall and appointment confirmation calls to drastically reduce no-shows.
+- Dispatches instant WhatsApp booking links for patient intake forms before arrival.
+
+KEY SECTION 03: Practice Revenue Impact & Cost Reduction
+- Reduces front-desk telephone load by up to 65%, enabling dental staff to focus on in-clinic patient care.
+- Captures an estimated $8,000–$15,000/month in previously missed after-hours treatment revenue.
+- Comprehensive compliance considerations and encrypted call data handling.
+
+PRIMARY CTA: Book Free Strategy Audit → https://pexek.com/book-audit
+INTERNAL LINKS: /ai-receptionist, /deployment-blueprints, /roi-calculator

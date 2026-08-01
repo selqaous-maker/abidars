@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@layer components {
+  .btn-pexek-primary {
+    @apply bg-[#00d4ff] text-black font-bold border border-[#00d4ff] hover:bg-white hover:border-white transition-all rounded-[2px] cursor-pointer;
+  }
+  .btn-pexek-secondary {
+    @apply bg-transparent text-white font-semibold border border-[#00d4ff]/40 hover:border-[#00d4ff] hover:text-[#00d4ff] transition-all rounded-[2px] cursor-pointer;
+  }
+}
+
+/* ==================== PEXEK LOGO STYLING ==================== */
+
+/* 1. Remove background box from logo containers */
+.logo-container,
+.navbar-brand,
+.site-logo,
+.logo-link {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* 2. Logo image - transparent with cyan glow */
+.pexek-logo,
+.logo-container img,
+.navbar-brand img,
+.site-logo img {
+  height: 44px; /* Desktop */
+  width: auto;
+  display: block;
+  background: transparent !important;
+  filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.4));
+  animation: logoBreathe 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+/* 3. Hover effect - intensify glow & scale */
+.logo-container:hover img,
+.navbar-brand:hover img,
+.site-logo:hover img,
+.logo-link:hover .pexek-logo {
+  filter: drop-shadow(0 0 16px rgba(0, 212, 255, 0.7)) drop-shadow(0 0 32px rgba(0, 212, 255, 0.3));
+  transform: scale(1.05);
+}
+
+/* 4. Keyframes for breathing electric cyan glow */
+@keyframes logoBreathe {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(0, 212, 255, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(0, 212, 255, 0.6))
+            drop-shadow(0 0 28px rgba(0, 212, 255, 0.2));
+  }
+}
+
+/* 5. Mobile sizing */
+@media (max-width: 968px) {
+  .pexek-logo,
+  .logo-container img,
+  .navbar-brand img,
+  .site-logo img {
+    height: 36px;
+  }
+}
+
+/* 6. Clean transparency safety overrides */
+.header-logo-wrapper,
+.nav-logo-box {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* ==================== HERO LOGO STYLING WITH ORBITAL LIGHT ==================== */
+.pexek-logo-orbit {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+/* The Logo */
+.orbit-logo-img {
+  position: relative;
+  z-index: 2;
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent !important;
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
+  transition: all 0.4s ease;
+}
+
+/* Orbital Ring */
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  z-index: 1;
+  pointer-events: none;
+  animation: orbitRotate 4s linear infinite;
+}
+
+/* Secondary ring - reverse direction, larger, subtler */
+.orbit-ring.reverse {
+  width: 300px;
+  height: 300px;
+  border-color: rgba(0, 212, 255, 0.05);
+  animation: orbitRotateReverse 6s linear infinite;
+}
+
+/* The glowing dot that travels */
+.orbit-dot {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #00d4ff;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 10px #00d4ff,
+    0 0 20px rgba(0, 212, 255, 0.8),
+    0 0 40px rgba(0, 212, 255, 0.4),
+    0 0 60px rgba(0, 212, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.orbit-dot.delay {
+  top: -3px;
+  width: 5px;
+  height: 5px;
+  opacity: 0.6;
+  box-shadow: 
+    0 0 8px #00d4ff,
+    0 0 16px rgba(0, 212, 255, 0.6);
+}
+
+/* Rotation animation */
+@keyframes orbitRotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbitRotateReverse {
+  0% { transform: translate(-50%, -50%) rotate(360deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* Hover effect */
+.pexek-logo-orbit:hover .orbit-dot {
+  box-shadow: 
+    0 0 15px #00d4ff,
+    0 0 30px rgba(0, 212, 255, 1),
+    0 0 60px rgba(0, 212, 255, 0.5),
+    0 0 90px rgba(0, 212, 255, 0.3);
+}
+
+.pexek-logo-orbit:hover .orbit-logo-img {
+  filter: drop-shadow(0 0 35px rgba(0, 212, 255, 0.8));
+  transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .pexek-logo-orbit {
+    width: 240px;
+    height: 240px;
+  }
+  .orbit-ring {
+    width: 210px;
+    height: 210px;
+  }
+  .orbit-ring.reverse {
+    width: 230px;
+    height: 230px;
+  }
+  .orbit-logo-img {
+    max-width: 170px;
+  }
+}
+
+

@@ -1,0 +1,35 @@
+# PEXEK COMPLETE SITEMAP & TARGET KEYWORD MAPPING
+
+CORE PAGES (High SEO Value)
+https://pexek.com/ | Target Keyword: "AI voice solutions"
+https://pexek.com/ai-receptionist | Target Keyword: "AI receptionist"
+https://pexek.com/ai-phone-answering-service | Target Keyword: "AI phone answering service"
+https://pexek.com/lead-qualification-ai | Target Keyword: "AI lead qualification"
+https://pexek.com/appointment-booking-ai | Target Keyword: "AI appointment booking"
+https://pexek.com/workflow-automation | Target Keyword: "AI workflow automation"
+https://pexek.com/conversation-intelligence | Target Keyword: "AI conversation analytics"
+
+INDUSTRY PAGES (High Intent)
+https://pexek.com/dental-ai-receptionist | Target Keyword: "AI receptionist dental"
+https://pexek.com/healthcare-ai-receptionist | Target Keyword: "AI healthcare receptionist"
+https://pexek.com/home-services-ai | Target Keyword: "AI answering service HVAC"
+https://pexek.com/real-estate-ai | Target Keyword: "AI real estate assistant"
+https://pexek.com/legal-ai-intake | Target Keyword: "AI legal intake"
+https://pexek.com/ecommerce-ai-support | Target Keyword: "AI ecommerce customer service"
+
+DEPLOYMENT PAGES
+https://pexek.com/how-it-works | Target Keyword: "14-Day Deployment"
+https://pexek.com/deployment-blueprints | Target Keyword: "AI deployment blueprint"
+https://pexek.com/integrations | Target Keyword: "Integration Ecosystem"
+https://pexek.com/security | Target Keyword: "Business Data Protection"
+https://pexek.com/pricing | Target Keyword: "AI deployment pricing"
+
+RESOURCES
+https://pexek.com/blog | Target Keyword: "AI voice insights"
+https://pexek.com/roi-calculator | Target Keyword: "Revenue Calculator"
+https://pexek.com/demo | Target Keyword: "Live Demo / Simulated Call"
+
+UTILITY PAGES
+https://pexek.com/about | Target Keyword: "About PEXEK + Founder"
+https://pexek.com/contact | Target Keyword: "Contact Form"
+https://pexek.com/book-audit | Target Keyword: "Strategy Audit Booking"

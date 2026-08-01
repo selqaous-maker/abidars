@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Voice Demo | PEXEK AI Operating System™</title>
+  <meta name="description" content="Listen to an interactive AI voice demo from PEXEK. See how AI handles customer calls, qualifies leads, books appointments into calendars, and updates CRMs in real time.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #050507;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    /* Custom scrollbar for transcript */
+    .transcript-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .transcript-scroll::-webkit-scrollbar-track {
+      background: #050507;
+    }
+    .transcript-scroll::-webkit-scrollbar-thumb {
+      background: #00d4ff;
+    }
+  </style>
+</head>
+<body class="bg-[#050507] text-white antialiased min-h-screen relative">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-[#050507]/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-2xl font-black font-mono tracking-tighter text-white">PEXEK<span class="text-[#00d4ff]">.</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono text-slate-300">
+        <a href="/solutions" class="hover:text-[#00d4ff] transition-colors">Solutions</a>
+        <a href="/industries" class="hover:text-[#00d4ff] transition-colors">Industries</a>
+        <a href="/how-it-works" class="hover:text-[#00d4ff] transition-colors">Deployment</a>
+        <a href="/pricing" class="hover:text-[#00d4ff] transition-colors">Pricing</a>
+        <a href="/case-studies" class="hover:text-[#00d4ff] transition-colors">Resources</a>
+        <a href="/about" class="hover:text-[#00d4ff] transition-colors">About</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="https://app.pexek.com" class="text-xs font-mono text-slate-400 hover:text-white transition-colors">Login</a>
+        <a href="/book-audit" class="bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs px-5 py-2.5 uppercase tracking-wider transition-all">Book Strategy Audit →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+    
+    <!-- 01. HERO SECTION -->
+    <div class="text-center space-y-4 max-w-3xl mx-auto">
+      <span class="text-xs font-bold uppercase font-mono tracking-widest text-[#00d4ff]">
+        PEXEK VOICE OS™ | INTERACTIVE DEMO
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight uppercase font-sans">
+        Experience How PEXEK Handles Customer Calls
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-sans max-w-2xl mx-auto">
+        Listen to an interactive AI voice interaction and see how customer intent flows through your business systems.
+      </p>
+
+      <div class="flex items-center justify-center gap-4 pt-2">
+        <button id="heroPlayBtn" onclick="togglePlay()" class="bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs px-6 py-3 uppercase tracking-wider transition-all flex items-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Experience This AI Call</span>
+        </button>
+        <a href="/book-audit" class="border border-white/20 hover:bg-white/5 text-white font-mono font-bold text-xs px-6 py-3 uppercase tracking-wider transition-all">
+          Book Strategy Audit →
+        </a>
+      </div>
+    </div>
+
+    <!-- 02. WORKFLOW STEP ANIMATION (TOP OF DEMO) -->
+    <div class="bg-[#0a0e1a] border border-white/10 p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <span class="text-xs font-mono text-[#00d4ff] font-bold uppercase">Real-Time Autonomous Workflow Execution</span>
+        <span id="workflowStatusText" class="text-xs font-mono text-slate-400">Status: Ready to simulation</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <!-- Step 1 -->
+        <div id="step-1" class="bg-[#050507] border border-white/10 p-3 text-center space-y-1 transition-all duration-300">
+          <div class="flex items-center justify-center">
+            <span id="step-1-icon" class="w-6 h-6 rounded-full border border-slate-600 text-[10px] font-mono flex items-center justify-center text-slate-400">1</span>
+          </div>
+          <span class="block text-[11px] font-bold text-slate-300 font-mono">Incoming Call</span>
+          <span id="step-1-status" class="block text-[9px] text-slate-500 font-mono">Waiting...</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="step-2" class="bg-[#050507] border border-white/10 p-3 text-center space-y-1 transition-all duration-300">
+          <div class="flex items-center justify-center">
+            <span id="step-2-icon" class="w-6 h-6 rounded-full border border-slate-600 text-[10px] font-mono flex items-center justify-center text-slate-400">2</span>
+          </div>
+          <span class="block text-[11px] font-bold text-slate-300 font-mono">AI Answers</span>
+          <span id="step-2-status" class="block text-[9px] text-slate-500 font-mono">Waiting...</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="step-3" class="bg-[#050507] border border-white/10 p-3 text-center space-y-1 transition-all duration-300">
+          <div class="flex items-center justify-center">
+            <span id="step-3-icon" class="w-6 h-6 rounded-full border border-slate-600 text-[10px] font-mono flex items-center justify-center text-slate-400">3</span>
+          </div>
+          <span class="block text-[11px] font-bold text-slate-300 font-mono">Lead Qualified</span>
+          <span id="step-3-status" class="block text-[9px] text-slate-500 font-mono">Waiting...</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div id="step-4" class="bg-[#050507] border border-white/10 p-3 text-center space-y-1 transition-all duration-300">
+          <div class="flex items-center justify-center">
+            <span id="step-4-icon" class="w-6 h-6 rounded-full border border-slate-600 text-[10px] font-mono flex items-center justify-center text-slate-400">4</span>
+          </div>
+          <span class="block text-[11px] font-bold text-slate-300 font-mono">Appt Booked</span>
+          <span id="step-4-status" class="block text-[9px] text-slate-500 font-mono">Waiting...</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div id="step-5" class="bg-[#050507] border border-white/10 p-3 text-center space-y-1 transition-all duration-300">
+          <div class="flex items-center justify-center">
+            <span id="step-5-icon" class="w-6 h-6 rounded-full border border-slate-600 text-[10px] font-mono flex items-center justify-center text-slate-400">5</span>
+          </div>
+          <span class="block text-[11px] font-bold text-slate-300 font-mono">CRM Updated</span>
+          <span id="step-5-status" class="block text-[9px] text-slate-500 font-mono">Waiting...</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div id="step-6" class="bg-[#050507] border border-white/10 p-3 text-center space-y-1 transition-all duration-300">
+          <div class="flex items-center justify-center">
+            <span id="step-6-icon" class="w-6 h-6 rounded-full border border-slate-600 text-[10px] font-mono flex items-center justify-center text-slate-400">6</span>
+          </div>
+          <span class="block text-[11px] font-bold text-slate-300 font-mono">WhatsApp Sent</span>
+          <span id="step-6-status" class="block text-[9px] text-slate-500 font-mono">Waiting...</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03. DEMO INTERFACE (TWO COLUMN LAYOUT) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT COLUMN: Audio Experience (60% width -> 7 cols on lg) -->
+      <div class="lg:col-span-7 bg-[#0d1117] border border-white/10 p-6 sm:p-8 space-y-6">
+        
+        <!-- Audio Metadata Header -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#050507] p-4 border border-white/10 font-mono text-xs">
+          <div>
+            <span class="text-slate-500 text-[10px] block uppercase">Industry</span>
+            <span class="text-white font-bold">Dental Practice</span>
+          </div>
+          <div>
+            <span class="text-slate-500 text-[10px] block uppercase">Duration</span>
+            <span class="text-white font-bold">1m 08s</span>
+          </div>
+          <div>
+            <span class="text-slate-500 text-[10px] block uppercase">Language</span>
+            <span class="text-white font-bold" id="currentLangDisplay">English</span>
+          </div>
+          <div>
+            <span class="text-slate-500 text-[10px] block uppercase">Outcome</span>
+            <span class="text-[#00d4ff] font-bold">Booked (3:15 PM)</span>
+          </div>
+        </div>
+
+        <!-- Voice & Language Selectors -->
+        <div class="space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1">Voice Persona</label>
+              <div class="flex flex-wrap gap-2">
+                <button onclick="selectVoice('Sarah')" id="v-Sarah" class="px-3 py-1.5 text-xs font-mono border bg-[#00d4ff]/10 border-[#00d4ff] text-[#00d4ff] font-bold">
+                  ○ Sarah (Warm)
+                </button>
+                <button onclick="selectVoice('Michael')" id="v-Michael" class="px-3 py-1.5 text-xs font-mono border bg-[#050507] border-white/15 text-slate-300 hover:border-white/30">
+                  ○ Michael (Direct)
+                </button>
+                <button onclick="selectVoice('Emma')" id="v-Emma" class="px-3 py-1.5 text-xs font-mono border bg-[#050507] border-white/15 text-slate-300 hover:border-white/30">
+                  ○ Emma (Clinical)
+                </button>
+                <button onclick="selectVoice('David')" id="v-David" class="px-3 py-1.5 text-xs font-mono border bg-[#050507] border-white/15 text-slate-300 hover:border-white/30">
+                  ○ David (Calm)
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono text-slate-400 mb-1">Language Dialect</label>
+              <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-[#050507] border border-white/15 px-3 py-1.5 text-xs font-mono text-white focus:border-[#00d4ff] focus:outline-none">
+                <option value="English">English (US)</option>
+                <option value="Spanish">Spanish (ES/MX)</option>
+                <option value="French">French (FR)</option>
+                <option value="Arabic">Arabic (Modern Standard)</option>
+                <option value="Moroccan Arabic">Moroccan Arabic (Darija)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Audio Player Box -->
+        <div class="bg-[#050507] border border-[#00d4ff]/30 p-6 space-y-6">
+          
+          <!-- Audio Waveform Visualization Canvas -->
+          <div class="h-20 bg-[#0a0e1a] border border-white/10 p-2 flex items-center justify-center relative overflow-hidden">
+            <canvas id="waveformCanvas" class="w-full h-full"></canvas>
+            <span id="canvasOverlay" class="absolute inset-0 flex items-center justify-center text-xs font-mono text-slate-500 bg-[#050507]/60 pointer-events-none">
+              Click play to activate live audio & AI voice waveform
+            </span>
+          </div>
+
+          <!-- Play / Pause Controls & Progress Bar -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-4">
+              <button id="mainPlayBtn" onclick="togglePlay()" class="w-14 h-14 bg-[#00d4ff] hover:bg-[#00c0eb] text-black flex items-center justify-center shrink-0 transition-transform active:scale-95 shadow-lg shadow-[#00d4ff]/20">
+                <svg id="playIcon" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="pauseIcon" class="w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+
+              <div class="flex-1 space-y-1">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                  <span id="activeCallLabel" class="text-white font-bold">PEXEK AI Voice Agent — Dental Emergency Intake</span>
+                  <span id="timeDisplay" class="text-[#00d4ff] font-bold">0:00 / 1:08</span>
+                </div>
+                <!-- Interactive Progress Seek Bar -->
+                <input 
+                  type="range" 
+                  id="seekSlider" 
+                  min="0" 
+                  max="68" 
+                  value="0" 
+                  oninput="seekAudio(this.value)"
+                  class="w-full h-2 bg-white/10 rounded-none appearance-none cursor-pointer accent-[#00d4ff]"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Synchronized Live Transcript (40% width -> 5 cols on lg) -->
+      <div class="lg:col-span-5 bg-[#0d1117] border border-white/10 p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+          <h3 class="text-sm font-bold text-white font-sans uppercase flex items-center gap-2">
+            <span class="w-2 h-2 bg-[#00d4ff] animate-ping"></span>
+            <span>Live Call Transcript</span>
+          </h3>
+          <span class="text-[10px] font-mono text-slate-400">Syncs with audio playback</span>
+        </div>
+
+        <!-- Transcript Lines Box -->
+        <div id="transcriptBox" class="h-80 overflow-y-auto space-y-3 pr-2 transcript-scroll font-mono text-xs">
+          
+          <!-- Line 1 -->
+          <div id="line-0" class="p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all">
+            <span class="text-[#00d4ff] text-[10px] block mb-1">[00:00 - 00:04] AI Agent</span>
+            <p className="line-text">"Thank you for calling Apex Dental Practice. I'm Sarah, an AI assistant. How can I help you today?"</p>
+          </div>
+
+          <!-- Line 2 -->
+          <div id="line-1" class="p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all">
+            <span class="text-[#00d4ff] text-[10px] block mb-1">[00:05 - 00:12] Caller</span>
+            <p className="line-text">"Hi Sarah, I broke my tooth while eating lunch and I'm in a lot of pain right now. Do you have any openings?"</p>
+          </div>
+
+          <!-- Line 3 -->
+          <div id="line-2" class="p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all">
+            <span class="text-[#00d4ff] text-[10px] block mb-1">[00:13 - 00:24] AI Agent</span>
+            <p className="line-text">"I'm very sorry to hear you're in pain. We reserve emergency slots every day. I have an emergency triage opening today at 3:15 PM with Dr. Miller. Would that time work for you?"</p>
+          </div>
+
+          <!-- Line 4 -->
+          <div id="line-3" class="p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all">
+            <span class="text-[#00d4ff] text-[10px] block mb-1">[00:25 - 00:30] Caller</span>
+            <p className="line-text">"Yes, 3:15 PM works perfectly. Thank you so much."</p>
+          </div>
+
+          <!-- Line 5 -->
+          <div id="line-4" class="p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all">
+            <span class="text-[#00d4ff] text-[10px] block mb-1">[00:31 - 00:48] AI Agent</span>
+            <p className="line-text">"Great! May I please have your full name, date of birth, and primary insurance provider to complete your booking?"</p>
+          </div>
+
+          <!-- Line 6 -->
+          <div id="line-5" class="p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all">
+            <span class="text-[#00d4ff] text-[10px] block mb-1">[00:49 - 00:58] Caller</span>
+            <p className="line-text">"My name is Michael Vance, DOB October 12th, 1988, and I have Delta Dental insurance."</p>
+          </div>
+
+          <!-- Line 7 -->
+          <div id="line-6" class="p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all">
+            <span class="text-[#00d4ff] text-[10px] block mb-1">[00:59 - 01:08] AI Agent</span>
+            <p className="line-text">"Perfect, Michael. You're confirmed for 3:15 PM today with Dr. Miller. I've sent a WhatsApp confirmation with location directions and intake forms. See you soon!"</p>
+          </div>
+
+        </div>
+
+        <!-- Technical Output Collapsible Drawer Toggle -->
+        <div class="border-t border-white/10 pt-3">
+          <button onclick="toggleTechnicalOutput()" class="text-xs font-mono text-slate-400 hover:text-[#00d4ff] flex items-center justify-between w-full py-1">
+            <span>▼ View Technical Output (JSON Metadata)</span>
+            <span class="text-[10px] bg-white/5 px-2 py-0.5">Developer View</span>
+          </button>
+          
+          <div id="techOutputDrawer" class="hidden mt-3 p-3 bg-[#050507] border border-white/10 text-[10px] font-mono text-green-400 overflow-x-auto max-h-40">
+<pre>{
+  "call_id": "call_pexek_98231a",
+  "intent": "emergency_dental_intake",
+  "confidence": 0.98,
+  "entities": {
+    "patient_name": "Michael Vance",
+    "dob": "1988-10-12",
+    "insurance": "Delta Dental",
+    "urgency": "critical_pain"
+  },
+  "actions_executed": [
+    { "service": "Dentrix_PMS", "action": "reserve_slot", "time": "15:15" },
+    { "service": "HubSpot_CRM", "action": "create_lead", "score": 95 },
+    { "service": "Twilio_WhatsApp", "action": "send_confirmation_template" }
+  ]
+}</pre>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 04. VOICE LIBRARY SECTION -->
+    <div class="bg-[#0a0e1a] border border-white/10 p-8 sm:p-12 space-y-8">
+      <div class="text-center space-y-2 max-w-3xl mx-auto">
+        <span class="text-xs font-mono font-bold text-[#00d4ff] uppercase">PERSONA CATALOG</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-sans uppercase">
+          Deploy AI Voices That Match Your Business
+        </h2>
+        <p class="text-slate-300 text-sm font-sans">
+          Choose from natural voices optimized for customer service, appointment booking, sales, and support.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="bg-[#050507] border border-white/10 p-5 space-y-3">
+          <span class="text-[10px] font-mono text-[#00d4ff] font-bold block uppercase">BUSINESS ENGLISH</span>
+          <h3 class="text-sm font-bold text-white font-sans">Professional & Trustworthy</h3>
+          <p class="text-xs text-slate-400 font-sans">Clear, articulate tone designed for legal intake, consulting, and finance.</p>
+          <button onclick="previewVoiceSample('Business English')" class="text-xs font-mono text-[#00d4ff] hover:underline block pt-1">
+            ▶ Sample Voice
+          </button>
+        </div>
+
+        <div class="bg-[#050507] border border-white/10 p-5 space-y-3">
+          <span class="text-[10px] font-mono text-[#00d4ff] font-bold block uppercase">HEALTHCARE ENGLISH</span>
+          <h3 class="text-sm font-bold text-white font-sans">Warm & Empathetic</h3>
+          <p class="text-xs text-slate-400 font-sans">Reassuring cadence for patient booking, dental triage, and clinics.</p>
+          <button onclick="previewVoiceSample('Healthcare English')" class="text-xs font-mono text-[#00d4ff] hover:underline block pt-1">
+            ▶ Sample Voice
+          </button>
+        </div>
+
+        <div class="bg-[#050507] border border-white/10 p-5 space-y-3">
+          <span class="text-[10px] font-mono text-[#00d4ff] font-bold block uppercase">PROFESSIONAL FEMALE</span>
+          <h3 class="text-sm font-bold text-white font-sans">Authoritative & Approachable</h3>
+          <p class="text-xs text-slate-400 font-sans">High engagement voice persona for real estate viewings and sales.</p>
+          <button onclick="previewVoiceSample('Professional Female')" class="text-xs font-mono text-[#00d4ff] hover:underline block pt-1">
+            ▶ Sample Voice
+          </button>
+        </div>
+
+        <div class="bg-[#050507] border border-white/10 p-5 space-y-3">
+          <span class="text-[10px] font-mono text-[#00d4ff] font-bold block uppercase">PROFESSIONAL MALE</span>
+          <h3 class="text-sm font-bold text-white font-sans">Confident & Calm</h3>
+          <p class="text-xs text-slate-400 font-sans">Decisive voice suited for HVAC dispatch, home service quote intake.</p>
+          <button onclick="previewVoiceSample('Professional Male')" class="text-xs font-mono text-[#00d4ff] hover:underline block pt-1">
+            ▶ Sample Voice
+          </button>
+        </div>
+
+      </div>
+
+      <div class="text-center border-t border-white/10 pt-6">
+        <span class="text-xs font-mono text-[#00d4ff] font-bold uppercase tracking-wider bg-[#00d4ff]/10 border border-[#00d4ff]/30 px-4 py-2">
+          100+ Languages & Regional Dialects Available
+        </span>
+      </div>
+    </div>
+
+    <!-- 05. ARABIC AI VOICE SUPPORT (DEDICATED SECTION) -->
+    <div class="bg-[#0a0e1a] border-l-4 border-[#00d4ff] border-y border-r border-white/10 p-8 sm:p-12 space-y-6">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <span class="text-xs font-mono font-bold text-[#00d4ff] uppercase">MENA REGIONAL SUPPORT</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white font-sans uppercase">
+            Arabic AI Voice Support
+          </h2>
+          <p class="text-slate-300 text-sm font-sans leading-relaxed">
+            Natural Arabic voice agents for businesses serving MENA markets. Supports <strong class="text-white">Modern Standard Arabic (العربية الفصحى)</strong>, <strong class="text-white">Gulf Arabic (الخليجية)</strong>, <strong class="text-white">Moroccan Arabic (الدارجة المغربية)</strong>, French, and English.
+          </p>
+          <p class="text-xs text-slate-400 font-sans italic">
+            "Perfect for dental clinics, healthcare providers, real estate agencies, and service businesses across Morocco, UAE, Saudi Arabia, and the broader MENA region."
+          </p>
+        </div>
+
+        <div class="shrink-0 space-y-3 w-full md:w-auto">
+          <a href="/book-audit" class="block text-center bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs px-6 py-3.5 uppercase tracking-wider transition-all">
+            Explore Arabic AI Voice Deployment →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MID-PAGE CTA -->
+    <div class="text-center bg-[#0a0e1a] border border-white/10 p-8 space-y-4">
+      <h3 class="text-xl font-bold text-white font-sans uppercase">
+        Want to hear how AI voice sounds for your industry?
+      </h3>
+      <a href="/book-audit" class="inline-block bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs px-6 py-3 uppercase tracking-wider transition-all">
+        Book Strategy Audit →
+      </a>
+    </div>
+
+    <!-- BOTTOM FINAL CTA -->
+    <div class="bg-[#0d1117] border-2 border-[#00d4ff] p-8 sm:p-12 text-center space-y-6 max-w-4xl mx-auto">
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white font-sans uppercase">
+        Ready to Deploy AI Voice for Your Business?
+      </h2>
+
+      <div class="flex flex-wrap justify-center gap-6 text-xs font-mono text-slate-300">
+        <span class="flex items-center gap-1.5"><strong class="text-[#00d4ff]">✓</strong> Custom voice configuration</span>
+        <span class="flex items-center gap-1.5"><strong class="text-[#00d4ff]">✓</strong> Industry-specific workflows</span>
+        <span class="flex items-center gap-1.5"><strong class="text-[#00d4ff]">✓</strong> 14-day deployment</span>
+      </div>
+
+      <div>
+        <a href="/book-audit" class="inline-block bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-sm px-8 py-4 uppercase tracking-wider transition-all shadow-xl">
+          Book My Strategy Session →
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- 06. END-OF-DEMO POPUP / OVERLAY -->
+  <div id="endDemoModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-[#0d1117] border-2 border-[#00d4ff] p-6 sm:p-8 max-w-md w-full relative space-y-5 text-center shadow-2xl">
+      <!-- Close Button -->
+      <button onclick="closeEndDemoModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white font-mono text-lg font-bold">
+        ✕
+      </button>
+
+      <span class="text-xs font-mono font-bold text-[#00d4ff] uppercase block">DEMO COMPLETE</span>
+      <h3 class="text-2xl font-extrabold text-white font-sans uppercase">
+        Like What You Heard?
+      </h3>
+      <p class="text-xs text-slate-300 font-sans leading-relaxed">
+        Let's build a custom AI voice system for your business that answers calls, qualifies leads, and locks in appointments 24/7.
+      </p>
+
+      <div class="space-y-2 pt-2">
+        <a href="/book-audit" class="block w-full bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs py-3.5 uppercase tracking-wider transition-all">
+          Book Strategy Audit →
+        </a>
+        <button onclick="closeEndDemoModal()" class="block w-full border border-white/20 hover:bg-white/5 text-slate-300 font-mono text-xs py-2.5 uppercase transition-all">
+          Explore More Demos
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#050507] border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 font-mono">
+    <p>© 2026 PEXEK AI Operating System™. All rights reserved.</p>
+  </footer>
+
+  <!-- SCRIPT FOR AUDIO PLAYER SIMULATION & TRANSCRIPT SYNC -->
+  <script>
+    let isPlaying = false;
+    let currentTime = 0;
+    const totalDuration = 68; // 1m 08s
+    let timerInterval = null;
+    let currentVoice = 'Sarah';
+    let currentLang = 'English';
+
+    // Transcript line timestamp ranges in seconds
+    const transcriptLines = [
+      { id: 'line-0', start: 0, end: 4, step: 2 },
+      { id: 'line-1', start: 5, end: 12, step: 2 },
+      { id: 'line-2', start: 13, end: 24, step: 3 },
+      { id: 'line-3', start: 25, end: 30, step: 4 },
+      { id: 'line-4', start: 31, end: 48, step: 4 },
+      { id: 'line-5', start: 49, end: 58, step: 5 },
+      { id: 'line-6', start: 59, end: 68, step: 6 }
+    ];
+
+    // Canvas visualizer waveform setup
+    const canvas = document.getElementById('waveformCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function drawWaveform() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const bars = 40;
+      const barWidth = (canvas.width / bars) - 2;
+
+      for (let i = 0; i < bars; i++) {
+        let height = 8;
+        if (isPlaying) {
+          height = Math.sin(Date.now() * 0.005 + i * 0.3) * (canvas.height / 3) + (canvas.height / 2.5);
+        }
+        ctx.fillStyle = isPlaying ? '#00d4ff' : '#1e293b';
+        ctx.fillRect(i * (barWidth + 2), (canvas.height - height) / 2, barWidth, height);
+      }
+
+      if (isPlaying) {
+        requestAnimationFrame(drawWaveform);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < bars; i++) {
+          ctx.fillStyle = '#1e293b';
+          ctx.fillRect(i * (barWidth + 2), canvas.height / 2 - 4, barWidth, 8);
+        }
+      }
+    }
+    drawWaveform();
+
+    function togglePlay() {
+      if (isPlaying) {
+        pauseAudio();
+      } else {
+        playAudio();
+      }
+    }
+
+    function playAudio() {
+      isPlaying = true;
+      document.getElementById('playIcon').classList.add('hidden');
+      document.getElementById('pauseIcon').classList.remove('hidden');
+      document.getElementById('canvasOverlay').classList.add('hidden');
+      
+      // Update Hero button text if visible
+      const heroBtn = document.getElementById('heroPlayBtn');
+      if (heroBtn) heroBtn.innerHTML = '❚❚ Pause AI Demo';
+
+      // Start Web Speech Synthesis if supported
+      if ('speechSynthesis' in window && currentTime === 0) {
+        speakCurrentLine(0);
+      }
+
+      timerInterval = setInterval(() => {
+        currentTime++;
+        if (currentTime > totalDuration) {
+          currentTime = totalDuration;
+          pauseAudio();
+          showEndDemoModal();
+          return;
+        }
+        updateUI();
+      }, 1000);
+
+      drawWaveform();
+    }
+
+    function pauseAudio() {
+      isPlaying = false;
+      clearInterval(timerInterval);
+      document.getElementById('playIcon').classList.remove('hidden');
+      document.getElementById('pauseIcon').classList.add('hidden');
+      
+      const heroBtn = document.getElementById('heroPlayBtn');
+      if (heroBtn) heroBtn.innerHTML = '▶ Experience This AI Call';
+
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+
+      drawWaveform();
+    }
+
+    function seekAudio(val) {
+      currentTime = parseInt(val, 10);
+      updateUI();
+    }
+
+    function updateUI() {
+      // Time display formatting
+      const mins = Math.floor(currentTime / 60);
+      const secs = (currentTime % 60).toString().padStart(2, '0');
+      document.getElementById('timeDisplay').innerText = `${mins}:${secs} / 1:08`;
+      document.getElementById('seekSlider').value = currentTime;
+
+      // Synchronize transcript line highlights
+      let activeStep = 1;
+      transcriptLines.forEach((line, index) => {
+        const el = document.getElementById(line.id);
+        if (currentTime >= line.start && currentTime <= line.end) {
+          el.className = 'p-3 border-l-4 border-[#00d4ff] bg-[#00d4ff]/10 text-white font-bold transition-all';
+          el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          activeStep = line.step;
+        } else {
+          el.className = 'p-3 border-l-2 border-white/10 bg-[#050507] text-[#94a3b8] transition-all';
+        }
+      });
+
+      // Update Workflow steps
+      for (let s = 1; s <= 6; s++) {
+        const stepEl = document.getElementById(`step-${s}`);
+        const iconEl = document.getElementById(`step-${s}-icon`);
+        const statusEl = document.getElementById(`step-${s}-status`);
+
+        if (s < activeStep) {
+          stepEl.className = 'bg-[#00d4ff]/10 border border-[#00d4ff] p-3 text-center space-y-1 transition-all duration-300';
+          iconEl.className = 'w-6 h-6 rounded-full bg-[#00d4ff] text-black text-[10px] font-mono font-bold flex items-center justify-center';
+          iconEl.innerHTML = '✓';
+          statusEl.innerText = 'Completed';
+          statusEl.className = 'block text-[9px] text-[#00d4ff] font-mono font-bold';
+        } else if (s === activeStep) {
+          stepEl.className = 'bg-[#00d4ff]/20 border-2 border-[#00d4ff] p-3 text-center space-y-1 transition-all duration-300 animate-pulse';
+          iconEl.className = 'w-6 h-6 rounded-full bg-[#00d4ff] text-black text-[10px] font-mono font-bold flex items-center justify-center';
+          iconEl.innerHTML = s;
+          statusEl.innerText = 'Active...';
+          statusEl.className = 'block text-[9px] text-[#00d4ff] font-mono font-bold';
+        } else {
+          stepEl.className = 'bg-[#050507] border border-white/10 p-3 text-center space-y-1 transition-all duration-300';
+          iconEl.className = 'w-6 h-6 rounded-full border border-slate-600 text-[10px] font-mono flex items-center justify-center text-slate-400';
+          iconEl.innerHTML = s;
+          statusEl.innerText = 'Waiting...';
+          statusEl.className = 'block text-[9px] text-slate-500 font-mono';
+        }
+      }
+
+      document.getElementById('workflowStatusText').innerText = `Step ${activeStep} of 6 Executing`;
+    }
+
+    function speakCurrentLine(lineIdx) {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      
+      const lineObj = transcriptLines[lineIdx];
+      if (!lineObj) return;
+
+      const text = document.querySelector(`#${lineObj.id} .line-text`).innerText;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1.0;
+      utterance.pitch = currentVoice === 'Sarah' ? 1.2 : 0.9;
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function selectVoice(name) {
+      currentVoice = name;
+      ['Sarah', 'Michael', 'Emma', 'David'].forEach(v => {
+        const btn = document.getElementById(`v-${v}`);
+        if (v === name) {
+          btn.className = 'px-3 py-1.5 text-xs font-mono border bg-[#00d4ff]/10 border-[#00d4ff] text-[#00d4ff] font-bold';
+        } else {
+          btn.className = 'px-3 py-1.5 text-xs font-mono border bg-[#050507] border-white/15 text-slate-300 hover:border-white/30';
+        }
+      });
+      document.getElementById('activeCallLabel').innerText = `PEXEK AI Voice Agent (${name}) — Dental Emergency Intake`;
+    }
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      document.getElementById('currentLangDisplay').innerText = lang;
+    }
+
+    function toggleTechnicalOutput() {
+      const drawer = document.getElementById('techOutputDrawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    function showEndDemoModal() {
+      document.getElementById('endDemoModal').classList.remove('hidden');
+    }
+
+    function closeEndDemoModal() {
+      document.getElementById('endDemoModal').classList.add('hidden');
+    }
+
+    function previewVoiceSample(category) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const text = `This is a sample of the PEXEK ${category} AI voice persona. Ready to answer calls and book appointments 24/7.`;
+        const utterance = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert(`Playing sample for ${category}`);
+      }
+    }
+  </script>
+
+</body>
+</html>
