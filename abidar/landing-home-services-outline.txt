@@ -1,0 +1,31 @@
+===================================================================
+PEXEK LANDING PAGE OUTLINE: HOME SERVICES AI
+URL: https://pexek.com/home-services-ai
+===================================================================
+
+TARGET KEYWORD: "AI answering service HVAC"
+AUTHOR: Salah Eddine El Qaous
+
+H1 HEADLINE:
+AI Answering Service for Home Services & HVAC — Dispatch Job Requests 24/7
+
+META DESCRIPTION:
+Capture every emergency repair and service quote call with PEXEK's AI answering service for HVAC, plumbing, electrical, and roofing contractors. Fully automated job intake.
+
+KEY SECTION 01: 24/7 Emergency Job Dispatch & Intake
+- Answers urgent HVAC, plumbing, and electrical service calls 24 hours a day, 365 days a year.
+- Asks specific diagnostic questions: equipment brand, issue description, urgency level, and job site address.
+- Immediately alerts on-call technicians for critical emergency call-outs.
+
+KEY SECTION 02: On-Site Estimate & Service Booking
+- Integrates with ServiceTitan, Housecall Pro, Jobber, and Google Calendar.
+- Schedules diagnostic visits and free estimate appointments based on technician availability zones.
+- Sends instant SMS confirmation with job arrival windows to the homeowner.
+
+KEY SECTION 03: Missed Call Recovery & Quote Follow-Up
+- Automatically dials back unanswered missed calls within 30 seconds to prevent leads from calling competitors.
+- Conducts automated post-job review follow-ups via WhatsApp or SMS.
+- Tracks dispatch metrics, call-to-job conversion rates, and revenue per service territory.
+
+PRIMARY CTA: Book Strategy Audit → https://pexek.com/book-audit
+INTERNAL LINKS: /ai-receptionist, /appointment-booking-ai, /pricing

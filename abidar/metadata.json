@@ -1,0 +1,6 @@
+{
+  "name": "PEXEK AI Operating System",
+  "description": "Enterprise AI voice automation for growth-focused businesses. Deploy AI agents that answer, qualify, and book appointments 24/7.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

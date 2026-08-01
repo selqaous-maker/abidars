@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEXEK Universal Strategy Session Modal Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pexekDark: '#050507',
+            pexekCard: '#0d1117',
+            pexekCyan: '#00d4ff',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#050507] text-slate-100 min-h-screen font-sans flex items-center justify-center p-4">
+
+  <!-- DEMO TRIGGER BUTTONS TO TEST DYNAMIC HEADLINE LOGIC -->
+  <div className="space-y-4 text-center max-w-xl">
+    <h1 class="text-2xl font-bold text-white uppercase tracking-wider">PEXEK Universal Conversion System</h1>
+    <p class="text-xs text-slate-400">Click any trigger button below to open the Universal Strategy Session Modal with the appropriate dynamic headline.</p>
+    
+    <div class="flex flex-wrap gap-2 justify-center pt-2">
+      <button onclick="openPexekModal('homepage')" class="px-4 py-2 bg-[#00d4ff] text-black font-mono font-bold text-xs uppercase">Homepage Trigger</button>
+      <button onclick="openPexekModal('dental')" class="px-4 py-2 bg-[#00d4ff] text-black font-mono font-bold text-xs uppercase">Dental Page Trigger</button>
+      <button onclick="openPexekModal('healthcare')" class="px-4 py-2 bg-[#00d4ff] text-black font-mono font-bold text-xs uppercase">Healthcare Trigger</button>
+      <button onclick="openPexekModal('real-estate')" class="px-4 py-2 bg-[#00d4ff] text-black font-mono font-bold text-xs uppercase">Real Estate Trigger</button>
+      <button onclick="openPexekModal('legal')" class="px-4 py-2 bg-[#00d4ff] text-black font-mono font-bold text-xs uppercase">Legal Trigger</button>
+      <button onclick="openPexekModal('pricing')" class="px-4 py-2 bg-[#00d4ff] text-black font-mono font-bold text-xs uppercase">Pricing Page Trigger</button>
+    </div>
+  </div>
+
+  <!-- PATH A: UNIVERSAL STRATEGY SESSION MODAL -->
+  <div id="pexek-modal-backdrop" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md transition-all">
+    
+    <div id="pexek-modal-card" class="bg-[#0d1117] border border-[#00d4ff]/20 rounded-md max-w-4xl w-full overflow-hidden shadow-2xl flex flex-col max-h-[95vh] relative">
+      
+      <!-- STEP PROGRESS BAR AT TOP -->
+      <div class="w-full bg-slate-900 h-1 relative">
+        <div id="pexek-step-bar" class="bg-[#00d4ff] h-1 transition-all duration-300 w-1/3"></div>
+      </div>
+
+      <!-- MODAL HEADER -->
+      <div class="px-6 py-4 bg-[#050507] border-b border-white/10 flex items-center justify-between">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#00d4ff]">
+              PATH A: STRATEGY SESSION
+            </span>
+            <span class="text-slate-600 text-[10px] font-mono">•</span>
+            <span id="pexek-step-text" class="text-xs font-mono text-slate-400">Step 1 of 3</span>
+          </div>
+          <!-- DYNAMIC HEADLINE -->
+          <h3 id="pexek-modal-headline" class="text-lg sm:text-xl font-extrabold text-white font-sans tracking-tight">
+            Let's Design Your AI Voice Deployment
+          </h3>
+        </div>
+
+        <button onclick="closePexekModal()" class="p-2 text-slate-400 hover:text-white bg-slate-900/80 border border-white/10 rounded hover:border-[#00d4ff]/40 transition-colors" title="Close (ESC)">
+          ✕
+        </button>
+      </div>
+
+      <!-- MODAL MAIN BODY (2 COLUMNS DESKTOP) -->
+      <div class="flex flex-col lg:flex-row overflow-y-auto">
+        
+        <!-- LEFT SIDEBAR: Trust & Deliverables (Always Visible) -->
+        <div class="lg:w-2/5 bg-[#050507] p-6 border-b lg:border-b-0 lg:border-r border-white/10 space-y-6 shrink-0">
+          
+          <!-- DYNAMIC REVENUE LEAK ESTIMATE -->
+          <div class="bg-[#00d4ff]/10 border border-[#00d4ff]/30 p-4 space-y-1">
+            <div class="text-[10px] font-mono text-[#00d4ff] uppercase tracking-wider font-bold flex items-center gap-1.5">
+              <span>💲 Estimated Recoverable Revenue</span>
+            </div>
+            <div id="pexek-leak-amount" class="text-2xl font-black text-white font-mono">
+              $6,750<span class="text-xs font-normal text-slate-400">/mo</span>
+            </div>
+            <div class="text-[10px] text-slate-400 font-sans">
+              Based on call volume & industry response benchmarks
+            </div>
+          </div>
+
+          <!-- WHAT YOU'LL LEAVE WITH -->
+          <div class="space-y-3">
+            <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+              📄 What You'll Leave With
+            </h4>
+            <ul class="space-y-2 text-xs text-slate-300 font-sans">
+              <li class="flex items-start gap-2">
+                <span class="text-[#00d4ff] font-bold">✓</span>
+                <span>Revenue leak assessment & recovery model</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#00d4ff] font-bold">✓</span>
+                <span>Custom AI voice call flow recommendations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#00d4ff] font-bold">✓</span>
+                <span>Personalized 14-day deployment roadmap</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#00d4ff] font-bold">✓</span>
+                <span>Ecosystem integration compatibility check</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#00d4ff] font-bold">✓</span>
+                <span>Estimated timeline & fixed investment quote</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- WHAT HAPPENS NEXT -->
+          <div class="space-y-2 pt-2 border-t border-white/10">
+            <h4 class="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400">
+              📊 What Happens Next
+            </h4>
+            <div class="space-y-1 text-[11px] font-mono text-slate-400">
+              <div class="flex items-center gap-2"><span class="text-[#00d4ff] font-bold">1.</span> 30-Min Strategy Session</div>
+              <div class="flex items-center gap-2"><span class="text-slate-500 font-bold">2.</span> Workflow Architecture</div>
+              <div class="flex items-center gap-2"><span class="text-slate-500 font-bold">3.</span> Deployment Blueprint</div>
+              <div class="flex items-center gap-2"><span class="text-slate-500 font-bold">4.</span> Proposal & SLA Setup</div>
+              <div class="flex items-center gap-2"><span class="text-slate-500 font-bold">5.</span> Go Live (~14 Days)</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDE: 3-STEP PROGRESSIVE FORM -->
+        <div class="lg:w-3/5 p-6 sm:p-8 space-y-6">
+          
+          <form id="pexek-audit-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+            
+            <!-- STEP 1: CONTACT INFO -->
+            <div id="pexek-step-1" class="space-y-4">
+              <div class="border-b border-white/10 pb-2">
+                <h4 class="text-sm font-bold text-white font-sans uppercase">Step 1: Contact Information</h4>
+                <p class="text-xs text-slate-400">Where should we send your custom deployment blueprint?</p>
+              </div>
+
+              <div class="space-y-3">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Full Name *</label>
+                  <input type="text" id="input-fullname" required placeholder="e.g. Sarah Vance" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2.5 text-sm text-white focus:border-[#00d4ff] focus:outline-none" oninput="saveDraft()">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Business Name *</label>
+                  <input type="text" id="input-company" required placeholder="e.g. Apex Health Clinic" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2.5 text-sm text-white focus:border-[#00d4ff] focus:outline-none" oninput="saveDraft()">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Work Email *</label>
+                  <input type="email" id="input-email" required placeholder="sarah@apexhealth.com" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2.5 text-sm text-white focus:border-[#00d4ff] focus:outline-none" oninput="saveDraft()">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Phone Number (for SMS & WhatsApp confirmation) *</label>
+                  <input type="tel" id="input-phone" required placeholder="+1 (555) 000-0000" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2.5 text-sm text-white focus:border-[#00d4ff] focus:outline-none" oninput="saveDraft()">
+                </div>
+              </div>
+
+              <div class="pt-3">
+                <button type="button" onclick="goToStep(2)" class="w-full bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs py-3.5 uppercase tracking-wider transition-all">
+                  Next: Business Context →
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: BUSINESS CONTEXT -->
+            <div id="pexek-step-2" class="space-y-4 hidden">
+              <div class="border-b border-white/10 pb-2 flex items-center justify-between">
+                <div>
+                  <h4 class="text-sm font-bold text-white font-sans uppercase">Step 2: Business Context</h4>
+                  <p class="text-xs text-slate-400">Tell us about your call volume and pain points</p>
+                </div>
+                <button type="button" onclick="goToStep(1)" class="text-xs font-mono text-slate-400 hover:text-white underline">← Back</button>
+              </div>
+
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Industry Vertical</label>
+                  <select id="input-industry" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2.5 text-sm text-white focus:border-[#00d4ff] focus:outline-none" onchange="updateLeakEstimate(); saveDraft();">
+                    <option value="Dental Practice">Dental Practice</option>
+                    <option value="Healthcare & Medical">Healthcare & Medical</option>
+                    <option value="Real Estate & Property">Real Estate & Property</option>
+                    <option value="Law Firm & Legal">Law Firm & Legal</option>
+                    <option value="Home Services">Home Services (HVAC, Plumbing, etc.)</option>
+                    <option value="E-commerce & Retail">E-commerce & Retail</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Monthly Call Volume</label>
+                  <select id="input-volume" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2.5 text-sm text-white focus:border-[#00d4ff] focus:outline-none" onchange="updateLeakEstimate(); saveDraft();">
+                    <option value="<100 calls/mo">&lt;100 calls/mo</option>
+                    <option value="100-500 calls/mo" selected>100-500 calls/mo</option>
+                    <option value="500-2000 calls/mo">500-2000 calls/mo</option>
+                    <option value="2000+ calls/mo">2000+ calls/mo</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-2">Biggest Call Challenge *</label>
+                  <div class="space-y-2" id="challenge-options">
+                    <button type="button" onclick="selectChallenge(this, 'Too many missed calls')" class="w-full text-left px-3.5 py-2 text-xs font-mono border border-[#00d4ff] bg-[#00d4ff]/10 text-white font-bold flex items-center justify-between">
+                      <span>🔘 Too many missed calls</span> <span>✓</span>
+                    </button>
+                    <button type="button" onclick="selectChallenge(this, 'Staff overloaded')" class="w-full text-left px-3.5 py-2 text-xs font-mono border border-white/15 bg-[#050507] text-slate-300 flex items-center justify-between">
+                      <span>🔘 Staff overloaded</span>
+                    </button>
+                    <button type="button" onclick="selectChallenge(this, 'Slow lead response')" class="w-full text-left px-3.5 py-2 text-xs font-mono border border-white/15 bg-[#050507] text-slate-300 flex items-center justify-between">
+                      <span>🔘 Slow lead response</span>
+                    </button>
+                    <button type="button" onclick="selectChallenge(this, 'Too many no-shows')" class="w-full text-left px-3.5 py-2 text-xs font-mono border border-white/15 bg-[#050507] text-slate-300 flex items-center justify-between">
+                      <span>🔘 Too many no-shows</span>
+                    </button>
+                    <button type="button" onclick="selectChallenge(this, 'Need appointment automation')" class="w-full text-left px-3.5 py-2 text-xs font-mono border border-white/15 bg-[#050507] text-slate-300 flex items-center justify-between">
+                      <span>🔘 Need appointment automation</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-3">
+                <button type="button" onclick="goToStep(3)" class="w-full bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs py-3.5 uppercase tracking-wider transition-all">
+                  Next: Schedule Session →
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3: SCHEDULE & SUBMIT -->
+            <div id="pexek-step-3" class="space-y-4 hidden">
+              <div class="border-b border-white/10 pb-2 flex items-center justify-between">
+                <div>
+                  <h4 class="text-sm font-bold text-white font-sans uppercase">Step 3: Preferred Schedule</h4>
+                  <p class="text-xs text-slate-400">Select a time for your 30-minute strategy audit</p>
+                </div>
+                <button type="button" onclick="goToStep(2)" class="text-xs font-mono text-slate-400 hover:text-white underline">← Back</button>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Preferred Date</label>
+                  <input type="date" id="input-date" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2 text-sm text-white focus:border-[#00d4ff]">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1">Preferred Time Slot</label>
+                  <select id="input-time" class="w-full bg-[#050507] border border-white/15 rounded-sm px-3.5 py-2 text-sm text-white focus:border-[#00d4ff]">
+                    <option>09:00 AM EST</option>
+                    <option selected>10:00 AM EST</option>
+                    <option>01:30 PM EST</option>
+                    <option>03:00 PM EST</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="pt-4 space-y-3">
+                <button type="submit" class="w-full bg-[#00d4ff] hover:bg-[#00c0eb] text-black font-mono font-bold text-xs py-4 uppercase tracking-wider transition-all shadow-xl shadow-[#00d4ff]/20">
+                  Get My Deployment Blueprint →
+                </button>
+                <p class="text-[10px] text-center text-slate-400 font-mono">
+                  No credit card required • 30-minute session • 100% confidential
+                </p>
+              </div>
+            </div>
+
+            <!-- TRUST BULLETS -->
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-mono text-[#94a3b8] pt-4 border-t border-white/10">
+              <div>✓ 30-minute AI strategy session</div>
+              <div>✓ Revenue leak assessment</div>
+              <div>✓ Personalized deployment blueprint</div>
+              <div>✓ Integration recommendations</div>
+            </div>
+
+          </form>
+
+          <!-- CONFIRMATION VIEW -->
+          <div id="pexek-confirmation" class="py-8 text-center space-y-5 hidden">
+            <div class="w-16 h-16 bg-[#00d4ff]/10 border border-[#00d4ff] rounded-full flex items-center justify-center mx-auto text-[#00d4ff] text-2xl font-bold">
+              ✓
+            </div>
+            <h4 class="text-xl font-bold text-white font-sans uppercase">Strategy Audit Reserved!</h4>
+            <p class="text-xs text-slate-300 max-w-md mx-auto leading-relaxed" id="confirm-msg">
+              Thank you. We have reserved your audit session.
+            </p>
+            <button onclick="closePexekModal()" class="bg-white/10 hover:bg-white/20 text-white font-mono text-xs px-8 py-3 uppercase transition-all">
+              Close Window
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    let currentStep = 1;
+    let selectedChallenge = "Too many missed calls";
+
+    const headlinesMap = {
+      homepage: "Let's Design Your AI Voice Deployment",
+      dental: "Let's Design Your Dental AI Receptionist",
+      healthcare: "Let's Design Your Healthcare AI System",
+      'real-estate': "Let's Design Your Real Estate AI Workflow",
+      'home-services': "Let's Design Your Home Services AI Dispatch",
+      legal: "Let's Design Your Legal AI Intake System",
+      ecommerce: "Let's Design Your E-commerce AI Support",
+      pricing: "Get Your Custom AI Deployment Quote"
+    };
+
+    function openPexekModal(source = 'homepage') {
+      const headline = headlinesMap[source] || "Let's Design Your AI Voice Deployment";
+      document.getElementById('pexek-modal-headline').innerText = headline;
+      document.getElementById('pexek-modal-backdrop').classList.remove('hidden');
+      document.getElementById('pexek-modal-backdrop').classList.add('flex');
+      goToStep(1);
+      updateLeakEstimate();
+    }
+
+    function closePexekModal() {
+      document.getElementById('pexek-modal-backdrop').classList.add('hidden');
+      document.getElementById('pexek-modal-backdrop').classList.remove('flex');
+    }
+
+    function goToStep(step) {
+      currentStep = step;
+      document.getElementById('pexek-step-text').innerText = `Step ${step} of 3`;
+      document.getElementById('pexek-step-bar').style.width = `${(step / 3) * 100}%`;
+
+      document.getElementById('pexek-step-1').classList.toggle('hidden', step !== 1);
+      document.getElementById('pexek-step-2').classList.toggle('hidden', step !== 2);
+      document.getElementById('pexek-step-3').classList.toggle('hidden', step !== 3);
+    }
+
+    function selectChallenge(btn, text) {
+      selectedChallenge = text;
+      const buttons = document.querySelectorAll('#challenge-options button');
+      buttons.forEach(b => {
+        b.className = "w-full text-left px-3.5 py-2 text-xs font-mono border border-white/15 bg-[#050507] text-slate-300 flex items-center justify-between";
+        b.querySelector('span:last-child')?.remove();
+      });
+      btn.className = "w-full text-left px-3.5 py-2 text-xs font-mono border border-[#00d4ff] bg-[#00d4ff]/10 text-white font-bold flex items-center justify-between";
+      btn.innerHTML = `<span>🔘 ${text}</span> <span>✓</span>`;
+    }
+
+    function updateLeakEstimate() {
+      const vol = document.getElementById('input-volume')?.value || "100-500 calls/mo";
+      const ind = document.getElementById('input-industry')?.value || "Dental Practice";
+      let baseVal = 350;
+      let calls = 300;
+
+      if (vol.includes('<100')) calls = 75;
+      if (vol.includes('100-500')) calls = 300;
+      if (vol.includes('500-2000')) calls = 1000;
+      if (vol.includes('2000+')) calls = 3000;
+
+      if (ind.includes('Real Estate')) baseVal = 800;
+      if (ind.includes('Legal')) baseVal = 1200;
+      if (ind.includes('Services')) baseVal = 400;
+
+      const recoverable = Math.round(calls * 0.45 * 0.80 * 0.25 * baseVal);
+      document.getElementById('pexek-leak-amount').innerHTML = `$${recoverable.toLocaleString()}<span class="text-xs font-normal text-slate-400">/mo</span>`;
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const fname = document.getElementById('input-fullname').value;
+      const comp = document.getElementById('input-company').value;
+      document.getElementById('pexek-audit-form').classList.add('hidden');
+      document.getElementById('pexek-confirmation').classList.remove('hidden');
+      document.getElementById('confirm-msg').innerHTML = `Thank you, <strong class="text-[#00d4ff]">${fname}</strong>. We have reserved your audit session for <strong class="text-white">${comp}</strong>.`;
+      localStorage.removeItem('pexek_modal_draft');
+    }
+
+    function saveDraft() {
+      const data = {
+        fullName: document.getElementById('input-fullname')?.value,
+        companyName: document.getElementById('input-company')?.value,
+        email: document.getElementById('input-email')?.value,
+        phone: document.getElementById('input-phone')?.value
+      };
+      localStorage.setItem('pexek_modal_draft', JSON.stringify(data));
+    }
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePexekModal();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PEXEK AI Operating System™ | Enterprise AI Voice Automation</title>
+    <meta name="description" content="PEXEK designs and deploys industry-specific AI voice systems that answer customer calls, qualify high-intent leads, book appointments, and automate follow-ups — helping businesses capture more revenue without adding operational complexity." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- PEXEK LOGO INSERTED -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/pvHYhfRT/Chat-GPT-Image-Jul-8-2026-05-29-33-PM.png">
+    <meta property="og:image" content="https://i.ibb.co/pvHYhfRT/Chat-GPT-Image-Jul-8-2026-05-29-33-PM.png">
+    <style>
+      :root {
+        --color-bg: #050507;
+        --color-surface: #0f172a;
+        --color-surface-hover: #1e293b;
+        --color-accent: #01df4a;
+        --color-accent-hover: #00c740;
+        --color-cyan: #00e5ff;
+        --color-text-main: #f8fafc;
+        --color-text-muted: #94a3b8;
+        --color-border: rgba(255, 255, 255, 0.08);
+      }
+      body {
+        background-color: var(--color-bg);
+        color: var(--color-text-main);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        overflow-x: hidden;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      @keyframes logoPulseGlow {
+        0%, 100% {
+          filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.12));
+        }
+        50% {
+          filter: drop-shadow(0 0 35px rgba(0, 212, 255, 0.30));
+        }
+      }
+      .logo-pulsing-glow {
+        animation: logoPulseGlow 3.5s ease-in-out infinite;
+      }
+      /* Custom crisp scrollbars */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050507;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 2px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #01df4a;
+      }
+      .glow-accent-sm {
+        box-shadow: 0 0 20px rgba(1, 223, 74, 0.15);
+      }
+      .border-glow {
+        border-color: rgba(1, 223, 74, 0.3);
+      }
+      /* Sharp edges or 4px max radius for buttons */
+      .btn-pexek-primary {
+        background-color: #01df4a;
+        color: #000000;
+        font-weight: 700;
+        border-radius: 4px;
+        transition: all 0.15s ease-in-out;
+      }
+      .btn-pexek-primary:hover {
+        background-color: #00c740;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 16px rgba(1, 223, 74, 0.25);
+      }
+      .btn-pexek-secondary {
+        background-color: transparent;
+        color: #f8fafc;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-weight: 600;
+        border-radius: 4px;
+        transition: all 0.15s ease-in-out;
+      }
+      .btn-pexek-secondary:hover {
+        border-color: #01df4a;
+        color: #01df4a;
+        background-color: rgba(1, 223, 74, 0.04);
+      }
+    </style>
+  </head>
+  <body class="bg-[#050507] text-slate-100 antialiased selection:bg-[#01df4a] selection:text-black">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
