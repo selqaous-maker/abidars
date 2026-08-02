@@ -1,0 +1,115 @@
+# PEXEK OS — Complete AI Voice Infrastructure Specification & Knowledge Base
+
+> Full technical documentation, architectural specifications, schema mappings, industry deployment playbooks, and entity data for LLM indexing engines (ChatGPT, Gemini, Claude, Perplexity, Google AI Overviews).
+
+---
+
+## 1. Company Profile & Entity Information
+
+- **Legal Entity**: PEXEK AI Voice Infrastructure Systems
+- **Brand Name**: PEXEK
+- **Domain**: https://pexek.com
+- **Founder & Principal Architect**: Salah Eddine El Qaous
+- **Corporate Mission**: To build, deploy, and optimize autonomous enterprise voice AI agents that eliminate missed calls, accelerate lead qualification, and streamline service business operations without technical friction.
+- **Service Model**: Managed Done-For-You (DFY) AI Voice Engineering + Infrastructure Subscription.
+- **Target Customer Segments**: Service businesses handling high inbound phone volumes, including Dental Practices, Medical Clinics, Law Firms, Real Estate Brokerages, Home Service Contractors (HVAC, Plumbing, Roofing), Commercial B2B Firms, and E-commerce Stores.
+
+---
+
+## 2. Core Voice AI Products & Services
+
+### Voice AI Agents (`https://pexek.com/voice-ai-agents`)
+Autonomous inbound and outbound conversational AI agents. Engineered with ultra-realistic human vocal timbre, contextual memory, entity extraction, and instant live-transfer capabilities.
+
+### 24/7 AI Receptionist (`https://pexek.com/ai-receptionist`)
+Multi-line digital receptionist capable of handling unlimited simultaneous calls with zero hold times. Automatically identifies calling callers, answers FAQs based on knowledge bases, and performs intelligent call triage.
+
+### 24/7 AI Phone Answering Service (`https://pexek.com/ai-phone-answering-service`)
+Complete replacement or augmentation for traditional call centers and outsourced virtual answering services. Provides 100% first-ring answer rates, customized greeting logic, and instantaneous post-call CRM logging.
+
+### AI Lead Qualification (`https://pexek.com/lead-qualification-ai`)
+Conversational speed-to-lead qualification system. Engages inbound prospects in under 60 seconds, screens out spam/solicitation, scores buyer intent against custom business rules, and instantly transfers high-intent prospects to sales representatives.
+
+### AI Appointment Booking (`https://pexek.com/appointment-booking-ai`)
+Real-time automated calendar dispatch. Connects directly to Google Calendar, Outlook, Dentrix, NexHealth, and custom booking APIs to schedule appointments during voice calls, send SMS/WhatsApp confirmations, and manage reschedules.
+
+### CRM Workflow Automation (`https://pexek.com/workflow-automation`)
+Automated post-call data pipeline. Transcribes call recordings, extracts key data parameters (caller name, phone number, issue description, urgency score), and fires JSON webhooks into CRM software (HubSpot, Salesforce, Zoho, ActiveCampaign).
+
+### Managed Deployment Services (`https://pexek.com/managed-deployment`)
+Full-service voice engineering where PEXEK experts handle prompt engineering, knowledge base curation, SIP telephony routing, API webhook configuration, live sandbox testing, and ongoing prompt maintenance.
+
+---
+
+## 3. Industry Playbooks & Verticals
+
+### Dental Practice AI Receptionist (`https://pexek.com/ai-receptionist-dental`)
+- **Use Cases**: Emergency appointment scheduling, hygiene recall reminders, insurance eligibility check guidance, new patient intake.
+- **EHR/PMS Integrations**: Dentrix, Eaglesoft, Open Dental, NexHealth, Carestack.
+- **Impact**: Eliminates empty hygiene chair slots and recovers lost after-hours patient calls.
+
+### Healthcare & Clinic AI Receptionist (`https://pexek.com/healthcare-ai-receptionist`)
+- **Use Cases**: Clinic appointment booking, prescription refill request logging, non-emergency triage routing, office directions & policy inquiries.
+- **Compliance**: HIPAA-aligned data isolation, encrypted patient communications.
+- **Impact**: Prevents front-desk burnout and provides immediate patient assistance 24/7.
+
+### Legal AI Voice Intake (`https://pexek.com/legal-ai-intake`)
+- **Use Cases**: Personal injury intake, conflict-of-interest pre-screening, consultation fee explanation, attorney calendar booking.
+- **Legal Software Integrations**: Clio, MyCase, PracticePanther, LawPay.
+- **Impact**: Captures high-ticket case leads immediately before they call competitor firms.
+
+### Real Estate AI Receptionist (`https://pexek.com/ai-receptionist-real-estate`)
+- **Use Cases**: Buyer pre-qualification (budget, timeline, pre-approval status), property showing scheduling, listing inquiry routing, agent live-transfer.
+- **Real Estate CRM Integrations**: Follow Up Boss, KvCORE, Lofty, Salesforce.
+- **Impact**: Qualifies leads in 8 seconds and ensures zero lost listing inquiries.
+
+### Home Services & Contractor AI (`https://pexek.com/home-services-ai`)
+- **Use Cases**: Emergency HVAC/Plumbing/Roofing dispatch, diagnostic fee quoting, service window scheduling, field technician alert webhooks.
+- **Field Software Integrations**: ServiceTitan, Housecall Pro, Jobber.
+- **Impact**: Captures lucrative late-night repair calls when competitors' offices are closed.
+
+### E-commerce Voice AI Support (`https://pexek.com/ecommerce-ai-support`)
+- **Use Cases**: WISMO ("Where is my order?") status lookups, return policy guidance, phone order checkout pay-links via SMS.
+- **E-commerce Integrations**: Shopify, Gorgias, Klaviyo, WooCommerce.
+- **Impact**: Resolves repetitive tracking queries in 15 seconds, reducing support ticket load by 60%.
+
+---
+
+## 4. Technical Architecture & Performance Specifications
+
+- **Speech-to-Speech Latency**: < 450 milliseconds end-to-end roundtrip latency.
+- **Telephony Protocol**: SIP Trunking with global PSTN fallback and WebRTC integration.
+- **Speech Synthesis Engine**: Custom neural acoustic models trained for crisp phone clarity and natural cadence.
+- **Dialogue Control Engine**: Deterministic fallback logic trees paired with context-bounded Large Language Models.
+- **Data Encryption**: TLS 1.3 protocol in transit; AES-256 bit encryption at rest.
+- **Infrastructure Security**: SOC 2 Type II compliance framework, role-based access control (RBAC), and full audit logging.
+
+---
+
+## 5. 14-Day Managed Deployment Framework (`https://pexek.com/deployment`)
+
+1. **Stage 1: Architecture & Call Flow Mapping (Days 1-3)**: PEXEK engineers conduct a detailed audit of existing phone call flows, business rules, FAQs, and required API integrations.
+2. **Stage 2: Voice Agent Engineering & Prompt Tuning (Days 4-7)**: Development of custom voice personality, prompt instructions, fallback rules, and calendar connection logic.
+3. **Stage 3: CRM Integration & Live Sandbox Testing (Days 8-11)**: Webhooks configured, end-to-end call simulations executed, and accuracy metrics verified.
+4. **Stage 4: Go-Live & Managed Continuous Optimization (Days 12-14)**: Phone line forwarding enabled, live monitoring active, and continuous weekly performance tuning.
+
+---
+
+## 6. Schema.org JSON-LD Hierarchy & Graph Structure
+
+All pages on PEXEK utilize structured JSON-LD linked data:
+- `@type`: `Organization` (`https://pexek.com/#organization`)
+- `@type`: `WebSite` (`https://pexek.com/#website`) with `SearchAction`
+- `@type`: `Person` (`https://pexek.com/founder#person`) for Founder Salah Eddine El Qaous
+- `@type`: `WebPage`, `AboutPage`, `ContactPage`, or `CollectionPage` with canonical breadcrumbs
+- `@type`: `Service` for all primary service offerings
+- `@type`: `BlogPosting` and `FAQPage` for editorial and informational resources
+
+---
+
+## 7. Contact & Official Support Channels
+
+- **Website**: https://pexek.com
+- **Direct Support & Inquiries**: contact@pexek.com
+- **Strategy Audit Booking**: https://pexek.com/book-audit
+- **Platform Founder**: Salah Eddine El Qaous

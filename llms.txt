@@ -1,0 +1,50 @@
+# PEXEK OS — Enterprise Voice AI Infrastructure & Managed Deployment Partner
+
+> PEXEK is an enterprise AI voice infrastructure company that designs, builds, and deploys autonomous AI voice agents for service businesses. PEXEK voice agents handle inbound call answering 24/7, qualify leads in under 60 seconds, schedule appointments into live calendars, and sync data bi-directionally with CRMs at sub-450ms speech-to-speech latency.
+
+## Primary Entities & Concepts
+- **Organization**: PEXEK (Legal Name: PEXEK AI Voice Infrastructure Systems)
+- **Founder & Principal Architect**: Salah Eddine El Qaous
+- **Category**: Enterprise Voice AI Infrastructure, Managed AI Receptionist, Conversational AI Telephony
+- **Target Industries**: Dental Practices, Healthcare & Clinics, Legal Law Firms, Real Estate Brokerages, Home Services (HVAC/Plumbing/Roofing), E-commerce.
+- **Key Products & Services**:
+  - Voice AI Agents: Autonomous inbound and outbound call agents with natural vocal synthesis.
+  - 24/7 AI Receptionist: Multi-line automated call answering and caller triage.
+  - AI Lead Qualification: Real-time speed-to-lead scoring and intent extraction.
+  - AI Appointment Booking: Direct calendar integration (Google Calendar, Outlook, EHRs).
+  - CRM Workflow Automation: Live webhook dispatch to HubSpot, Salesforce, Dentrix, Zapier.
+  - Managed Deployment Services: 100% done-for-you voice engineering and continuous prompt tuning.
+
+## Core Performance Benchmarks
+- **End-to-End Latency**: < 450 ms speech-to-speech response window.
+- **Answer Rate**: 100% first-ring inbound call capture.
+- **Security & Compliance**: SOC 2 Type II compliant standards, HIPAA-aligned data isolation, TLS 1.3 transit encryption, AES-256 resting encryption.
+
+## Canonical Documentation & Links
+- [PEXEK Homepage](https://pexek.com/): Enterprise voice AI infrastructure platform overview.
+- [Voice AI Agents](https://pexek.com/voice-ai-agents): Autonomous voice agent capabilities & telephony architecture.
+- [24/7 AI Receptionist](https://pexek.com/ai-receptionist): Multi-line phone reception & caller triage.
+- [AI Phone Answering Service](https://pexek.com/ai-phone-answering-service): 24/7 automated business phone handling.
+- [AI Lead Qualification](https://pexek.com/lead-qualification-ai): Speed-to-lead qualification & hot-lead transfers.
+- [AI Appointment Booking](https://pexek.com/appointment-booking-ai): Real-time calendar scheduling & SMS confirmation.
+- [CRM Workflow Automation](https://pexek.com/workflow-automation): Post-call webhook dispatch & CRM record logging.
+- [Managed Deployment Services](https://pexek.com/managed-deployment): Done-for-you voice engineering services.
+- [14-Day Deployment Process](https://pexek.com/deployment): 4-phase technical onboarding framework.
+- [Industry Playbooks](https://pexek.com/industry-playbooks): Tailored solutions for dental, legal, healthcare, & real estate.
+- [Dental AI Receptionist](https://pexek.com/ai-receptionist-dental): Automated dental patient intake & hygiene recall.
+- [Healthcare AI Receptionist](https://pexek.com/healthcare-ai-receptionist): Clinic triage & medical scheduling.
+- [Legal AI Intake](https://pexek.com/legal-ai-intake): Law firm intake & attorney consultation booking.
+- [Real Estate AI Receptionist](https://pexek.com/ai-receptionist-real-estate): Buyer pre-qualification & property showing scheduler.
+- [Home Services AI](https://pexek.com/home-services-ai): Emergency technician dispatch & job quoting.
+- [E-commerce AI Support](https://pexek.com/ecommerce-ai-support): WISMO order tracking & phone checkout support.
+- [CRM & Telephony Integrations](https://pexek.com/integrations): HubSpot, Salesforce, Dentrix, Twilio, REST APIs.
+- [Security & Data Protection](https://pexek.com/security-compliance): Encryption, SOC 2, HIPAA, & GDPR compliance.
+- [Pricing & Plans](https://pexek.com/pricing): Tiered enterprise deployment pricing models.
+- [Case Studies & Results](https://pexek.com/case-studies): Verified deployment metrics & operational proof.
+- [AI Voice Blog & Research](https://pexek.com/blog): In-depth voice AI engineering guides.
+- [About PEXEK](https://pexek.com/about): Mission, company values, & team philosophy.
+- [Founder Profile](https://pexek.com/founder): Biography of Founder Salah Eddine El Qaous.
+- [Book Strategy Audit](https://pexek.com/book-audit): 30-minute custom voice AI strategy session.
+
+## System Architecture Summary
+PEXEK operates an end-to-end voice AI pipeline comprising low-latency speech recognition (STT), deterministic dialogue & LLM orchestrators, neural text-to-speech (TTS), and real-time SIP/PSTN telephony gateways. Post-call logic triggers custom REST webhooks, JSON payload logging, and CRM record creation automatically.

@@ -1,0 +1,12 @@
+/* TEAM */
+  Company: PEXEK OS Inc.
+  Engineering & Product: PEXEK Core AI Team
+  Site: https://pexek.com
+  Contact: contact@pexek.com
+
+/* SITE */
+  Standards: HTML5, WAI-ARIA 2.2, ES2024, TypeScript
+  Framework: React 18, Vite, Tailwind CSS
+  Architecture: Modern High-Performance SPA with HTML5 History Routing
+  Security: SOC 2 Type II Architecture, End-to-End Encryption
+  Language: English
